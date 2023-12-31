@@ -21,18 +21,16 @@ class ProductView {
     Storage.saveProduct({ title, quantity, category });
     // console.log(title, quantity, category);
     //   update DOM
+    this.products = Storage.getAllProducts();
     this.createProductList(this.products);
   }
   setAPP() {
-    const products = Storage.getAllProducts();
+    this.products = Storage.getAllProducts();
   }
   createProductList(products) {
     let result = ``;
-    const savedProducts = Storage.getAllProducts();
-    const productListContainer = document.querySelector("#product-list");
-    savedProducts.forEach((p) => {
+    products.forEach((p) => {
       const savedCategories = Storage.getAllCategories();
-      console.log(savedCategories);
       const selectedCategories = savedCategories.find(
         (c) => c.id == p.category
       );
@@ -51,6 +49,7 @@ class ProductView {
         </div>
       </div>`;
     });
+    const productListContainer = document.querySelector("#product-list");
     productListContainer.innerHTML = result;
     //delete product
     const deleteBtns = [...document.querySelectorAll("#delete-btn")];
@@ -59,18 +58,21 @@ class ProductView {
       item.addEventListener("click", (e) => {
         const deletBtn = e.target.dataset.productId;
         Storage.deleteProduct(deletBtn);
-        this.createProductList();
+        this.products = Storage.getAllProducts();
+        this.createProductList(this.products);
       });
     });
   }
 
   searchProducts(e) {
     const searchValue = e.target.value.trim().toLowerCase();
-    const products = Storage.getAllProducts();
-    const filteredProducts = products.find((p) => {
-      p.title.toLowerCase().include(searchValue);
+    this.products = Storage.getAllProducts();
+    console.log(searchValue);
+    const filteredProducts = this.products.filter((p) => {
+      return p.title.toLowerCase().includes(searchValue);
     });
     console.log(filteredProducts);
+    this.createProductList(filteredProducts);
   }
 }
 export default new ProductView();
