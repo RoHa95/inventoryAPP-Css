@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./style.css" />
+    <title>Inventory App</title>
+  </head>
+  <body>
+    <nav class="navbar">
+      <h1>Inventory App using js and Css</h1>
+      <span class="number-container">7</span>
+    </nav>
+    <div class="app-content">
+      <div class="app">
+        <!-- category form -->
+        <span class="add-category-btn">add new category??</span>
+        <div id="category-form" class="form-container hidden">
+          <h2 class="form-title">Add New Category</h2>
+          <form>
+            <label for="category-title"> title </label>
+            <input type="text" id="category-title" />
+            <label for="category-description"> description </label>
+            <textarea type="text" id="category-description"></textarea>
+            <div class="category-form-btns-container">
+              <button
+                id="cancel-add-category-form"
+                class="cancel-add-new-category-btn"
+              >
+                Cancel
+              </button>
+              <button id="add-new-category-btn" class="add-new-category-btn">
+                Add New Category
+              </button>
+            </div>
+          </form>
+        </div>
+        <!-- product form -->
+        <div class="form-container">
+          <h2 class="form-title">Add New Product</h2>
+          <form>
+            <label for="product-title"> title </label>
+            <input type="text" id="product-title" />
+            <label for="product-quantity"> Quantity </label>
+            <input type="number" id="product-quantity" />
+            <label for="product-category"> Category </label>
+            <select class="category-select" id="product-category">
+              <!-- <option class="category-select-option" value="">
+                Select a Category
+              </option>
+              <option class="category-select-option" value="">fontend</option>
+              <option class="category-select-option" value="">backend</option> -->
+            </select>
+            <div class="category-form-btns-container">
+              <button class="cancel-add-new-category-btn">Cancel</button>
+              <button id="add-new-product-btn" class="add-new-category-btn">
+                Add New Product
+              </button>
+            </div>
+          </form>
+        </div>
+        <!-- serch products -->
+        <div class="search-container">
+          <span class="search-title">search</span>
+          <input id="search-input" class="input-title" type="text" />
+        </div>
+        <!-- product list -->
+        <div id="product-list" class="product-list">
+          <h2 class="form-title">Product List</h2>
+
+          <!-- <div class="product-detailes">
+            <span class="product-list-title">title</span>
+            <div class="product-item-detailes">
+              <span class="time-tag">updated</span>
+              <span class="category-tag">fronend</span>
+              <span class="number-container">7</span>
+              <button class="delete-tag">delete</button>
+            </div>
+          </div>
+          <div class="product-detailes">
+            <span class="product-list-title">title</span>
+            <div class="product-item-detailes">
+              <span class="time-tag">updated</span>
+              <span class="category-tag">fronend</span>
+              <span class="number-container">7</span>
+              <button class="delete-tag">delete</button>
+            </div>
+          </div>
+          <div class="product-detailes">
+            <span class="product-list-title">title</span>
+            <div class="product-item-detailes">
+              <span class="time-tag">updated</span>
+              <span class="category-tag">fronend</span>
+              <span class="number-container">7</span>
+              <button class="delete-tag">delete</button>
+            </div>
+          </div> -->
+        </div>
+        <div style="height: 100px"></div>
+      </div>
+    </div>
+    <script src="./app.js" type="module"></script>
+  </body>
+</html>
