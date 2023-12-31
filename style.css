@@ -210,3 +210,18 @@ body {
   align-items: center;
   margin-bottom: 25px;
 }
+.sort-title {
+  font-weight: bold;
+  font-size: large;
+  color: #edf0f5;
+}
+.select-category {
+  background-color: transparent;
+  border: #7b8eaa 1px solid;
+  border-radius: 10px;
+  height: 45px;
+  margin-bottom: 25px;
+  padding-left: 10px;
+  color: #7b8eaa;
+  outline: none;
+}
