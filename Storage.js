@@ -34,7 +34,7 @@ export default class Storage {
     const sortedCategories = categories.sort((a, b) => {
       new Date(a.createAt) > new Date(b.createAt) ? 1 : -1;
     });
-    return categories;
+    return sortedCategories;
   }
   static saveCategory(categoryToSave) {
     const categories = Storage.getAllCategories();
